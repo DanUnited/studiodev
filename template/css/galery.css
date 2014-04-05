@@ -1,0 +1,124 @@
+#project_container
+{
+	height: auto;
+	margin: 0 auto;
+	width: 800px;
+	background: rgba(0, 0, 0, 0.09);
+	border-radius: 15px;
+	padding: 15px 17px;
+	overflow: hidden;
+}
+#project_box
+{
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	position: relative;
+	width: 202px;
+	margin: 0 22px 22px 0;
+	background: #424B50;
+	color: #B4CAF1;
+	font-family: Tahoma, Arial;
+	float: left;
+}
+#project_box #img_box
+{
+	width: 202px;
+	height: 158px;
+	border-radius: 3px 3px 0 0;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	background: #AAA;
+}
+#project_box #info{}
+#project_box #name
+{
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 5px;
+	font-weight: bold;
+	margin-top: 5px;
+	color: #FFF;
+}
+#project_box #wrap
+{
+	padding-bottom: 6px;
+	border-bottom: 1px solid #333536;
+	margin-bottom: 4px;
+}
+#project_box #tags
+{
+	font-size: 11px;
+	overflow: hidden;
+	height: 17px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 160px;
+	text-align: left;
+	margin: 5px 13px;
+}
+#project_box #stat
+{
+-webkit-box-shadow: 0 1px 0px 0px #333536 inset;
+-moz-box-shadow: 0 1px 0px 0px #333536 inset;
+box-shadow: 0 1px 0px 0px #333536 inset;
+border-radius: 0 0 3px 3px;
+padding: 7px 10px 3px;
+border-top: none;
+background-color: #424B50;
+position: relative;
+overflow: hidden;
+}
+#project_box #stat #likes
+{
+	height: 13px;
+	width: 13px;
+	background: url(/img/galery.png) 0px 561px;
+	float: left;
+	opacity: 0.7;
+}
+#project_box #stat #likesdeg
+{
+float:left;
+line-height: 13px;
+padding: 0px 4px 2px;
+}
+
+#project_box #stat #views
+{
+	height: 11px;
+	width: 15px;
+	background: url(/img/galery.png) 0px 647px;
+	float: left;
+	margin-left: 6px;
+	opacity: 0.7;
+}
+#project_box #stat #viewsdeg
+{
+float:left;
+line-height: 13px;
+padding: 0px 4px 2px;
+}
+
+#project_box #stat #submit
+{
+height: 12px;
+width: 9px;
+background: url(/img/galery.png) 0px -125px;
+float: right;
+margin-left: 6px;
+margin-top: 1px;
+}
+#project_box #stat #submit_pre
+{
+float: right;
+margin-right: -1px;
+line-height: 13px;
+cursor: pointer;
+}
+
+
+
+
