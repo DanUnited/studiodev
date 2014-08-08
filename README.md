@@ -12,10 +12,26 @@ Now realised next tools:
 - DataBase Class
 - Query builder
 - Auth realize with CMS
-
-Now in developing:
+- 
+=========
+###Now in developing:
 
 ActiveRecord Class
 CMS realization
 linguistic division.
 
+=========
+```php
+function action_page()
+        {
+            $page = $this->GetParam(1);
+            if (AppValidator::Make(
+                array('id' => $page),
+                array('id' => 'required|integer|exist:content'))
+            )
+
+                AppView::generate('content.php', array('content' => Content::find($page)->inArray()));
+            else
+                AppRoute::ErrorPage404();
+        }
+```
