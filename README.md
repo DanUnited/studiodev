@@ -3,7 +3,7 @@ studiodev
 
 Studiodev Framework and CMS
 
-Special project for me and other peoples. This project is created for self-education.
+Special project for me and other developers. This project is created for self-education.
 ### Now realised next tools:
 * Inversion Conntrol with Fasades
 * Configuration 
