@@ -5,7 +5,7 @@ Studiodev Framework and CMS
 
 Special project for me and other developers. This project is created for self-education.
 ### Now realised next tools:
-* Inversion Conntrol with Fasades
+* Inversion Control with Facades
 * Configuration 
 * Model View Controller template
 * Validators
