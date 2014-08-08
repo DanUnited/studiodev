@@ -1,0 +1,146 @@
+
+
+#page{
+	border: 1px solid #494949;
+	border-left: 1px solid #161616;
+	height: auto;
+	position: relative;
+	left: -50px;
+	margin-bottom: 30px;
+	background: rgba(0, 0, 0, 0.38);
+	width: 804px;
+}
+#contenthead
+{
+	color: #81BDEC;
+	width: 803px;
+	float: none;
+	font: bold 14px/22px Verdana,Tahoma,Arial,sans-serif;
+}
+#contenthead_w{
+color: #81BDEC;
+width: 891px;
+float: none;
+font: bold 14px/22px Verdana,Tahoma,Arial,sans-serif;
+}
+
+#contenthead:hover
+{
+	color: #CCC;
+}
+#contenthead div,
+#contenthead_w div
+{
+	background: #1A1919;
+	position: relative;
+	width: auto;
+	left: 0px;
+	padding: 0px 30px;
+	margin-right: 200px;
+	border-radius: 0px;
+}
+div#content
+{
+	width: 530px;
+	height: auto;
+	border: 0px solid #888;
+	float: left;
+	font-size: 15px;
+	color: #BEBEBE;;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	padding-left: 50px;
+	word-wrap: normal;
+	background: #282e31;
+	font-family: "PT Sans",Arial;
+}
+div#content_full
+{
+	width: 621px;
+	height: auto;
+	border: 0px solid #888;
+	float: left;
+	font-size: 15px;
+	color: #BEBEBE;;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 50px;
+	padding-left: 50px;
+	word-wrap: normal;
+	background: #282e31;
+	font-family: "PT Sans",Arial;
+}
+div#readmore
+{
+	float: right;
+	width: 100px;
+	height: 22px;
+	border: 1px solid #000;
+	background: #045BA0;
+	color: #CCC;
+	font-size: 9pt;
+	text-align: center;
+	padding-top: 5px;
+	margin-right: -7px;
+}
+div#readmore a
+{
+	color: #CCC;
+	width: 100%;
+	height: 100%;
+	float: left;
+	margin-top: -5px;
+	padding-top: 5px;
+}
+div#readmore a:hover 
+{
+	background:#CCC;
+	cursor: pointer;
+	color: #000;
+	text-decoration: none;
+}
+
+#right_indent
+{
+	width: 200px;
+	height: 464px;
+	background: #161616;
+	position: absolute;
+	left: 50%;
+	border-left: 1px solid #000;
+	margin-left: 183px;
+	margin-top: 20px;
+}
+#right_indent_small {
+	width: 112px;
+	height: 464px;
+	background: #161616;
+	position: absolute;
+	left: 50%;
+	border-left: 1px solid #000;
+	margin-left: 271px;
+	margin-top: 20px;
+}
+
+#left_indent
+{
+	width: 34px;
+	height: 100%;
+	float: left;
+	background: #282e31;
+	position: relative;
+	top: 0px;
+	padding-top: 8px;
+}
+#time
+{
+	float: right;
+	height: 27px;
+	background: url(/img/time.png) no-repeat 0px 3px;
+	padding-left: 23px;
+	font-style: italic;
+	width: 61px;
+	text-align: center;
+	margin-right: 10px;
+}

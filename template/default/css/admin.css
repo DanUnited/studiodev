@@ -1,0 +1,73 @@
+
+div#main_content {
+    height: 400px;
+    color: white;
+    text-align: left;
+}
+
+div#main_content select {
+    width: 214px;
+    background: #E8EAFF;
+    border: 2px solid rgb(48, 49, 58);
+    height: 27px;
+    border-radius: 7px;
+    padding-left: 12px;
+}
+
+div#main_content input[type=text] {
+    /*background: #F8F7EC;
+    border: 1px solid rgb(48, 49, 58);
+    width: 300px;
+    padding: 2px;*/
+    border-radius: 7px;
+    border: 2px solid rgb(63, 64, 64);
+    width: 200px;
+    height: 20px;
+    padding-left: 12px;
+    font-size: 10pt;
+}
+
+div#main_content input[type=submit] {
+    border: 2px solid gray;
+    height: 30px;
+    width: 100px;
+    border-radius: 8px;
+    background: #1E1E1E;
+    color: #FFF;
+}
+
+div#main_content input[type=submit]:hover {
+    background: #FFF;
+    color: #212121;
+    cursor: pointer;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div#main_content p {
+    color: #FFF;
+    font-size: 11pt;
+}
+
+table#content_list {
+    width: 800px;
+    border: 1px solid Black;
+    font-size: 11pt;
+}
+
+table#content_list th, td {
+    text-align: center;
+}
+
+table#content_list tbody tr:nth-child(odd) {
+    background: #2C3441;
+}
+
+div#message {
+    color: rgb(177, 245, 56);
+}
+
+a.icon {
+    color: rgb(81, 255, 81);
+    text-decoration: none;
+}

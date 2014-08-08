@@ -1,0 +1,131 @@
+{% set dir = '/template/default/' %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Студия дизайна Studiodev</title>
+
+    <link rel="stylesheet" href="{{ dir }}/css/global.css">
+    <!--глобал и слайдер-->
+    <link rel="stylesheet" href="{{ dir }}/css/custom.css">
+    <!--основная разметка-->
+    <link rel="stylesheet" href="{{ dir }}/css/content.css">
+    <!--стили материалов-->
+    <link rel="stylesheet" href="{{ dir }}/css/chain.css">
+    <!--стили chain roundbox-->
+    <link rel="stylesheet" href="{{ dir }}/css/galery.css">
+    <link rel="stylesheet" href="{{ dir }}/css/admin.css">
+
+
+    <script src="{{ dir }}/js/jquery-1.9.1.js"></script>
+    <script src="{{ dir }}/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="{{ dir }}/js/slides.js"></script>
+    <script src="{{ dir }}/js/edit_area/edit_area_full.js"></script>
+    <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+<!--верхняя навигационная панель-->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+
+        <a class="brand" href="#"></a>
+
+        <div class="nav-collapse" style="float:left;">
+            <!--навигационные пункты верхнего меню-->
+            <ul class="nav" id="yw0">
+                <li><a href="/">Главная</a></li>
+                <li class="active"><a href="/admin/content">Админка</a></li>
+                <li><a href="#job">Вакансии</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                {% if user %}
+                <li><a href="/app/logout">{{ user['user'] }} [Выйти]</a></li>
+                {% else %}
+                <li><a href="/app/login">Вход</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div id="find">
+        <input type="text" name="ifind" value="Поиск..." id="ifind"
+               onclick="if (this.value == 'Поиск...') { this.value='' } ;"
+               onblur="if (this.value=='') { this.value='Поиск...'; }">
+    </div>
+</div>
+<!--end top menu!-->
+<div id="topbox">
+    <div style="width: 840px; margin: 0 auto;">
+
+        <div class="vmenu_h">
+            <a class="butmenu light" href="/admin/content">Материалы</a>
+            <a class="butmenu light" href="/admin/category">Категории</a>
+            <a class="butmenu light" href="/admin/users">Пользователи</a>
+            <a class="butmenu light" href="/admin/settings">Настройки</a>
+
+        </div>
+    </div>
+    <div id="project_container">
+        {% block body %}
+        {% endblock %}
+    </div>
+</div>
+
+<div id="bottombackground">
+    <div id="bottomdarkline"></div>
+    <img src="/img/footer.png"
+         style="margin-top: -43px;position: relative;float: left;left: 50%;margin-left: -590px;z-index: 80;">
+    <img src="/img/footer2.jpg" style="margin-top: -50px;position: relative;z-index: 79;">
+</div>
+<div id="bottomalign">
+    <div id="bottomroundhead"></div>
+    <div id="bottomroundbox"></div>
+</div>
+<!--end botbox-->
+</body>
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#tslides").hide();
+        $("#ifind").bind({
+            focus: function () {
+                if ($(this).attr('title') == $(this).attr('value')) {
+                    $(this).attr('value', '');
+                }
+                $("div#find").animate({"width": "168px"}, 800);
+            },
+            blur: function () {
+                $("div#find").animate({"width": "120px"}, 800);
+                if ($(this).attr('value') == '') {
+                    $(this).attr('value', $(this).attr('title'));
+                }
+            },
+            keypress: function () {
+                if (($(this).attr('value') != '' ) && (event.keyCode == 13)) {
+                    document.location.href = "/app/search/" + $(this).val();
+                }
+            }
+        });
+
+        $("div#right_indent").height($("div#contentsblock").height() + 60);
+        /**
+         * Horisontal menu active class
+         */
+        var path = window.location.pathname;
+        path = path.replace(/\/$/, "");
+        path = decodeURIComponent(path);
+
+        $("a.butmenu.light").each(function () {
+            var href = $(this).attr('href');
+            if (path.substring(0, href.length) === href) {
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>

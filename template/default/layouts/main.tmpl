@@ -1,0 +1,187 @@
+{% set dir = '/template/default/' %}
+<!doctype html>
+<html lang="ru">
+<head>
+        <meta charset="utf-8">
+	<title>Студия дизайна Studiodev</title>
+	
+	<link rel="stylesheet" href="{{ dir }}/css/global.css">			<!--глобал и слайдер-->
+	<link rel="stylesheet" href="{{ dir }}/css/custom.css">			<!--основная разметка-->
+	<link rel="stylesheet" href="{{ dir }}/css/content.css">			<!--стили материалов-->
+	<link rel="stylesheet" href="{{ dir }}/css/chain.css">			<!--стили chain roundbox-->
+	<link rel="stylesheet" href="{{ dir }}/css/galery.css">
+	<link rel="stylesheet" href="{{ dir }}/css/admin.css">
+
+	<script src="{{ dir }}/js/jquery-1.9.1.js"></script>
+	<script src="{{ dir }}/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="{{ dir }}/js/slides.js"></script>
+	<script src="{{ dir }}/js/edit_area/edit_area_full.js"></script>
+	<!--[if gte IE 9]>
+  	<style type="text/css">
+  	  .gradient {
+   	    filter: none;
+  	  }
+  </style>
+<![endif]-->
+</head>
+<body>
+<!--верхняя навигационная панель-->
+<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+
+				<a class="brand" href="#"></a>
+					<div class="nav-collapse" style="float:left;"> 
+							<!--навигационные пункты верхнего меню-->
+							<ul class="nav" id="yw0">
+							<li class="active"><a href="/">Главная</a></li>
+							<li><a href="/admin/content">Админка</a></li>
+							<li ><a href="#job">Вакансии</a></li>
+							<li ><a href="#contacts">Контакты</a></li>
+								{% if user %}
+							<li ><a href="/app/logout">{{ user['user'] }} [Выйти]</a></li>
+							{% else %}
+							<li ><a href="/app/login">Вход</a></li>
+							{% endif %}
+							</ul>
+					</div>
+
+			</div>
+							<div id="find">
+            					<input type="text" name="ifind" value="Поиск..." id="ifind" onclick="if (this.value == 'Поиск...') { this.value='' } ;" onblur="if (this.value=='') { this.value='Поиск...'; }" >
+            				</div>
+		</div>
+<!--end top menu!-->
+<div id="topbox">
+<div style="width: 840px; margin: 0 auto;" >
+
+<div class="vmenu">
+	<div class="light butmenu" style="z-index:38">Портфолио</div>
+	<div class="butmenu light" style="z-index:37">Заказать</div>
+	<div class="butmenu light" style="z-index:36">Команда</div>
+	<div class="butmenu light" style="z-index:35">Блог</div>
+	
+</div>
+<div id="slidesblock">
+	<!--SLIDER!!!-->
+<div id="container">
+		<div id="example">
+			<div id="slides">
+				<div class="slides_container">
+					<div>
+						<a href="#" title="#" target="_blank"><img src="/img/slide-4.jpg" width="570" height="270" alt="Slide 4"></a>
+						<div class="caption">
+							<p>Ming Fan art work</p>
+						</div>
+					</div>
+										<div>
+						<a href="#" title="Save my love for loneliness | Flickr - Photo Sharing!" target="_blank"><img src="/img/slide-7.jpg" width="570" height="270" alt="Slide 7"></a>
+						<div class="caption">
+							<p>Ming Fan Art #2</p>
+						</div>
+					</div>
+					
+					<div>
+						<a href="#" title="Happy Bokeh raining Day | Flickr - Photo Sharing!" target="_blank"><img src="/img/slide-3.jpg" width="570" height="270" alt="Slide 3"></a>
+						<div class="caption">
+							<p>Ming Fan Art #3</p>
+						</div>
+					</div>
+
+					<div>
+						<a href="#" title="#" target="_blank"><img src="/img/slide-6.jpg" width="570" height="270" alt="Slide 6"></a>
+						<div class="caption">
+							<p>Ming Fan Art #4</p>
+						</div>
+					</div>
+
+				</div>
+				<a href="#" class="prev"><img src="/img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+				<a href="#" class="next"><img src="/img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+			</div>
+			
+		</div>
+	</div>
+	<!--END SLIDER-->
+
+        </div>
+
+</div>
+<div style="clear: both;"></div>
+<p class="headbottom">&nbsp;
+<div id="right_indent"></div>
+<span id="copyright">Studio Development</span>		
+</p>
+</div>
+
+{% block body %}
+{% endblock %}
+
+<div id="bottombackground">
+ <div id="bottomdarkline"></div>
+	<img src="/img/footer.png" style="margin-top: -43px;position: relative;float: left;left: 50%;margin-left: -590px;z-index: 80;">
+	<img src="/img/footer2.jpg" style="margin-top: -50px;position: relative;z-index: 79;">
+</div>
+<div id="bottomalign">
+		<div id="bottomroundhead">Записи блога</div>
+		<div id="bottomroundbox">
+		<ul>
+			<li><a href="#">Обзор Web-редакторов</a></li>		
+			<li><a href="#">Заметки HTML верстальщика</a></li>	
+			<li><a href="#"> Авторское мнение о выборе CMS, удобной Framework</a></li>	
+			<li><a href="#">Перспективы программиста: Web, Soft или Game Industry ?</a></li>
+		</ul>	
+		</div>
+	</div>
+<!--end botbox-->
+</body>
+
+<script>
+ $(document).ready(function(){
+
+			
+			$("#tslides").hide();
+			$("#ifind").bind({
+				focus: function() {
+					if ($(this).attr('title') == $(this).attr('value')) {
+						$(this).attr('value', '');
+					}
+					$("div#find").animate({"width":"168px"},800);
+				},
+				blur: function() {
+					$("div#find").animate({"width":"120px"},800);
+					if ($(this).attr('value') == '') {
+						$(this).attr('value', $(this).attr('title'));
+					}
+				},
+				keypress: function(){
+				if(($(this).attr('value') != '' )&&(event.keyCode==13))
+					{
+					document.location.href = "/app/search/"+$(this).val();
+					}
+					}
+			});
+				
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: 3000,
+				pause: 1000,
+				hoverPause: true,
+				animationStart: function(){
+					$('.caption').animate({
+						bottom:-35
+					},100);
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},200);
+					if (window.console && console.log) {
+						// example return of current slide number
+						//console.log(current);
+					};
+				}
+			});
+			$("div#right_indent").height($("div#contentsblock").height()+60);
+		});
+	</script>

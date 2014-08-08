@@ -1,10 +1,17 @@
 <?php
-ini_set('display_errors', 1);
-$config = include('core/config.php');
-		  require 'core/core.php';
-/*
- *Initialize configs and run
- */
-Core::Data()->SetConfig($config);
-Core::Data()->Conf();
-Core::Data()->Run();
+    use Core\App;
+    use Core\Config;
+    $start  = microtime(true);
+    $config = include('core/Config.php');
+    require 'core/Run.php';
+    require 'core/Autoload.php';
+
+    Config::read('conf.php');
+    App::setup(Config::get('components'));
+    App::Initialize();
+
+    AppRoute::start();
+    echo (memory_get_usage()/1024).' байт скушано. ';
+    $time = microtime(true) - $start;
+    printf('Скрипт выполнялся %.4F сек.', $time);
+
